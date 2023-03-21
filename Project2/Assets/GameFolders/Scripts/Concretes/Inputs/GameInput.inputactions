@@ -1,0 +1,56 @@
+{
+    "name": "GameInput",
+    "maps": [
+        {
+            "name": "PlayerOnFoot",
+            "id": "829672df-9d83-41a4-b53c-3c13e72b3174",
+            "actions": [
+                {
+                    "name": "HorizontalMove",
+                    "type": "PassThrough",
+                    "id": "eb13f14b-25ff-4cf0-bea2-b92d8d59163a",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "AD",
+                    "id": "a95189a6-27ed-40f1-93a9-b218c759bb12",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMove",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "58464210-1997-4951-b309-e29f359ea112",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "e46148c4-f2de-442e-b998-0f591f30dccd",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HorizontalMove",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
