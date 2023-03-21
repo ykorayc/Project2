@@ -403,6 +403,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 277825114106158488, guid: 4abd4714fcc1aa64cb5ddd36b69db6b9, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 381816055635209498, guid: 4abd4714fcc1aa64cb5ddd36b69db6b9, type: 3}
       propertyPath: m_Name
       value: Player
@@ -413,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 381816055635209499, guid: 4abd4714fcc1aa64cb5ddd36b69db6b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4672601
+      value: 2.83
       objectReference: {fileID: 0}
     - target: {fileID: 381816055635209499, guid: 4abd4714fcc1aa64cb5ddd36b69db6b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -450,6 +454,10 @@ PrefabInstance:
     - target: {fileID: 381816055635209499, guid: 4abd4714fcc1aa64cb5ddd36b69db6b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157615350438668469, guid: 4abd4714fcc1aa64cb5ddd36b69db6b9, type: 3}
+      propertyPath: m_Constraints
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

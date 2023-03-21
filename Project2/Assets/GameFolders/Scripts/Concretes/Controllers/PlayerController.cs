@@ -9,7 +9,7 @@ namespace Project2.Controllers
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] float moveSpeed = 20f;
+        [SerializeField] float moveSpeed ;  
         HorizontalMovements _horizontalMovements;
         JumpWithRigidbody _jumpWithRigidbody;
         [SerializeField] private float _jumpForce;
