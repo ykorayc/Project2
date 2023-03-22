@@ -5,6 +5,7 @@ using Project2.Movements;
 using Project2.Abstracts.Inputs;
 using UnityEngine.InputSystem;
 using Project2.Inputs;
+using Project2.Managers;
 namespace Project2.Controllers
 {
     public class PlayerController : MonoBehaviour
@@ -17,7 +18,7 @@ namespace Project2.Controllers
         [SerializeField] private float _jumpForce;
         
         private bool isJump;
-        
+        private bool isDead = false;
         IInputReader _input;
         float _horizontal;
         public float _moveBoundary => moveBoundary;
@@ -30,6 +31,7 @@ namespace Project2.Controllers
         }
         private void Update() //Inputlarý update metodunda okuruz. 
         {
+            if (isDead) return;  //Komuz almasýnýn onune gecmis oluyoruz boylece. Cok basit ve cok etkili bir cozum.Bu sekilde input alamaz. Update fonksiyonundan cikar isDead'se eger.
             _horizontal = _input.horizontal;
             if (_input.isJump)
             {
@@ -50,7 +52,16 @@ namespace Project2.Controllers
             }
             isJump = false;
               
-          
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            EnemyController _enemy = collision.collider.GetComponent<EnemyController>();
+            if(_enemy!=null) //Bunu belirtmek zorundayiz, aksi halde hata alabiliriz.
+            {
+                isDead = true;
+                GameManager._instance.StopGame();
+            }
         }
     }
 }

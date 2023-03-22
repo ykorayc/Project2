@@ -18,7 +18,6 @@ namespace Project2.Controllers
         private void Update()
         {
             currentLifeTime += Time.deltaTime;  //Saniye saniye arttirir.
-            Debug.Log(currentLifeTime);
             if (currentLifeTime > maxLifeTime)
             {
                 currentLifeTime = 0f;
