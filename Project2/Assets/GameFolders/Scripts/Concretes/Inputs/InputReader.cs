@@ -11,10 +11,15 @@ namespace Project2.Inputs
         PlayerInput playerInput;
         public float horizontal { get;private set ; }
 
+
+        public bool isJump { get; private set; }
+
         public InputReader(PlayerInput _playerInput)
         {
             playerInput = _playerInput;
             playerInput.currentActionMap.actions[0].performed += OnHorizontalMove; //Player Inputtaki Default Map-->Action Map'tir. [0] dememiz gameInput asset'inin icerisindeki 1.'yi acmamizi saglar.
+            playerInput.currentActionMap.actions[1].started += OnJump;
+            playerInput.currentActionMap.actions[1].canceled += OnJump;
         }
 
        
@@ -23,7 +28,13 @@ namespace Project2.Inputs
         {
             horizontal = context.ReadValue<float>();
         }
-         
+        void OnJump(InputAction.CallbackContext context)
+        {
+        //  isJump = context.ReadValue<bool>();  //Space'e basildigi anda isJump true olacak. Yani sadece float degerleri degil, ayni zamanda bool degerlerini de cekebiliriz.
+            isJump = context.ReadValueAsButton();
+        }
+
+
     }
 
 }

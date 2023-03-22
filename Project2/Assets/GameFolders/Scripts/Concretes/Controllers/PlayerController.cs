@@ -9,14 +9,18 @@ namespace Project2.Controllers
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] float moveSpeed ;  
+        [SerializeField] float moveBoundary;
+        [SerializeField] float moveSpeed ;
+        public float _moveSpeed => moveSpeed;
         HorizontalMovements _horizontalMovements;
         JumpWithRigidbody _jumpWithRigidbody;
         [SerializeField] private float _jumpForce;
-        [SerializeField] private bool isJump;
+        
+        private bool isJump;
         
         IInputReader _input;
         float _horizontal;
+        public float _moveBoundary => moveBoundary;
 
         private void Awake()
         {
@@ -27,11 +31,16 @@ namespace Project2.Controllers
         private void Update() //Inputlarý update metodunda okuruz. 
         {
             _horizontal = _input.horizontal;
+            if (_input.isJump)
+            {
+                isJump = true;
+            }
             
+            Debug.Log(isJump);
         }
         private void FixedUpdate()
         {
-            _horizontalMovements.TickFixed(_horizontal,moveSpeed);
+            _horizontalMovements.TickFixed(_horizontal);
 
 
             if (isJump) 
