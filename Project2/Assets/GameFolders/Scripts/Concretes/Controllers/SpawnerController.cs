@@ -33,6 +33,7 @@ namespace Project2.Controllers
         void Spawn()
         {
             EnemyController _enemyController= Instantiate(_enemyPrefab, transform.position, transform.rotation); //Instantiate edilmis olan prefab'in uretildigi spawner'in child'i olmasini istedigimiz icin bir obje olusturduk.
+
             _enemyController.transform.parent = this.gameObject.transform;
             currentSpawnTime = 0;
             GetRandomMaxTime();
