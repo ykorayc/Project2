@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Project2.Managers;
 
 namespace Project2.Controllers
 {
     public class SpawnerController : MonoBehaviour
     {
-        [SerializeField] EnemyController _enemyPrefab;
+     
 
         [Range(.1f,6f)]
         [SerializeField] float minVal=.1f;
@@ -32,9 +33,12 @@ namespace Project2.Controllers
         }
         void Spawn()
         {
-            EnemyController _enemyController= Instantiate(_enemyPrefab, transform.position, transform.rotation); //Instantiate edilmis olan prefab'in uretildigi spawner'in child'i olmasini istedigimiz icin bir obje olusturduk.
+            EnemyController newEnemy = EnemyManager._instance.GetPool();
 
-            _enemyController.transform.parent = this.gameObject.transform;
+            newEnemy.gameObject.SetActive(true);
+            newEnemy.transform.parent = this.gameObject.transform;
+            newEnemy.transform.position = this.transform.position;
+
             currentSpawnTime = 0;
             GetRandomMaxTime();
         }

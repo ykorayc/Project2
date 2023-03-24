@@ -16,7 +16,7 @@ namespace Project2.Movements
             moveSpeed = playerController._moveSpeed;
             moveBoundary = playerController._moveBoundary;
         }
-        public void TickFixed(float horizontal)
+        public void FixedTick(float horizontal)
         {
             if (horizontal == 0) return;
             _playerController.transform.Translate(Vector3.right*horizontal*Time.deltaTime*moveSpeed); //Vector3.right ile carpmakzzorundayiz(- ve + olaylarýnýn duzgun calisabilmesi icin)

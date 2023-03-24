@@ -38,11 +38,10 @@ namespace Project2.Controllers
                 isJump = true;
             }
             
-            Debug.Log(isJump);
         }
         private void FixedUpdate()
         {
-            _horizontalMovements.TickFixed(_horizontal);
+            _horizontalMovements.FixedTick(_horizontal);
 
 
             if (isJump) 

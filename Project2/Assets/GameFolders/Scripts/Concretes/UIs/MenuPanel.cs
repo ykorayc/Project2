@@ -6,8 +6,9 @@ namespace Project2.UIs
 {
     public class MenuPanel : MonoBehaviour
     {
-        public void StartButtom()
+        public void SelectAndStart(int index)
         {
+            GameManager._instance.diffucultyIndex = index;
             GameManager._instance.LoadScene("Game");
         }
 
@@ -15,6 +16,8 @@ namespace Project2.UIs
         {
             GameManager._instance.ExitGame();
         }
+        
+
     }
 
 }

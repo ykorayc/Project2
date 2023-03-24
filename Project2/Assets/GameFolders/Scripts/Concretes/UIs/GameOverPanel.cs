@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project2.Managers;
+using UnityEngine.SceneManagement;
 namespace Project2.UIs
 {
     public class GameOverPanel : MonoBehaviour

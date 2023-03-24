@@ -11,12 +11,12 @@ namespace Project2.Movements
         public VerticalMover(EnemyController enemyController)
         {
             _enemyController = enemyController;
-            _enemyMoveSpeed = _enemyController._enemyMoveSpeed;
+            //_enemyMoveSpeed = _enemyController.enemyMoveSpeed; //Boyle yazinca dogru calismadi!
         }
 
         public void FixedTick(float vertical=1)
         {
-            _enemyController.transform.Translate(Vector3.forward*Time.deltaTime*vertical*_enemyMoveSpeed);
+            _enemyController.transform.Translate(Vector3.forward*Time.deltaTime*vertical*_enemyController.enemyMoveSpeed);  //direk fonskiyonun icerisinde yazinca aldi.
         }
     }
 }

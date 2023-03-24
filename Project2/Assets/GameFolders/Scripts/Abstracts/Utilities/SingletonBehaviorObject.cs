@@ -10,7 +10,7 @@ namespace Project2.Abstracts
 
         public static T _instance { get; private set; }
         
-           protected void SingletonThisGameObject(T entity)
+           protected void SingletonThisGameObject(T entity) //Disaridan aliyorsun, aslinda disaridan aldigin da kendisi oluyor.
             {
             if (_instance==null)
             {
